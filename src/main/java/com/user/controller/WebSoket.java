@@ -14,7 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 @SuppressWarnings("ALL")
-
+/**连接实现websocket的类
+ *
+ */
 @Component
 @ServerEndpoint("/webSocketByTomcat/{username}")
 public class WebSoket {
