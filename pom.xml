@@ -45,6 +45,17 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
+                <artifactId>spring-websocket</artifactId>
+                <version>5.0.4.RELEASE</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-messaging -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-messaging</artifactId>
+                <version>5.1.4.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
                 <version>4.3.11.RELEASE</version>
             </dependency>
@@ -89,6 +100,16 @@
                 <artifactId>jstl</artifactId>
                 <version>1.2</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-websocket</artifactId>
+                <version>8.5.27</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.9.2</version>
+            </dependency>
 
         </dependencies>
     <build>
@@ -117,6 +138,10 @@
                         <artifactId>mysql-connector-java</artifactId>
                         <version>5.1.9</version>
                     </dependency>
+
+
+
+
                 </dependencies>
             </plugin>
         </plugins>
