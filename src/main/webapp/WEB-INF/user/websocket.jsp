@@ -32,7 +32,7 @@
     };
 
     function onMessage(event) {
-        alert("接受到了服务器返回的数据")
+        // alert("接受到了服务器返回的数据")
         document.getElementById('messages').innerHTML
             += '<br />' + event.data;
     }

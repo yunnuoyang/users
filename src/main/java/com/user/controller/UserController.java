@@ -2,18 +2,23 @@ package com.user.controller;
 
 import com.user.pojo.Users;
 import com.user.service.UserService;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
 @RequestMapping("user")
 public class UserController {
     @Autowired
+
     private UserService userService;
 
 
@@ -30,9 +35,9 @@ public class UserController {
         modelAndView.setViewName("userlist");
         return modelAndView;
     }
-
     @RequestMapping("del")
-    private String del(Users users) {
+//    BindingResult bindingResult
+    private String del( Users users) {
         userService.delUserByID(users);
         return "redirect:userlist";
     }
@@ -47,7 +52,7 @@ public class UserController {
         return modelAndView;
     }
     @RequestMapping("doupdate")
-    private  String doupdate(Users users){
+    public   String doupdate( Users users)throws Exception{
         userService.modifyUserByID(users);
         return "redirect:userlist";
     }

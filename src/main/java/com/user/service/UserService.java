@@ -9,7 +9,7 @@ public interface UserService {
 
     void delUserByID(Users users);
 
-    void modifyUserByID(Users users);
+    void modifyUserByID(Users users) throws Exception;
 
     Users getCurUser(Users users);
 

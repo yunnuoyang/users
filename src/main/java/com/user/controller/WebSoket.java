@@ -42,7 +42,6 @@ public class WebSoket {
     public static void setWebSocketSet(CopyOnWriteArraySet<WebSoket> webSocketSet) {
         WebSoket.webSocketSet = webSocketSet;
     }
-
     @OnMessage
     public void onMessage(String message, Session session) throws Exception{
         this.session=session;

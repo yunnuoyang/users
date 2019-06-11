@@ -7,6 +7,7 @@ import com.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Service
@@ -20,17 +21,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void delUserByID(Users users) {
+    public void delUserByID( Users users) {
         usersMapper.deleteByPrimaryKey(users.getId());
     }
 
     @Override
-    public void modifyUserByID(Users users) {
+    public void modifyUserByID(@Valid Users users) throws Exception{
         usersMapper.updateByPrimaryKeySelective(users);
     }
 
     @Override
-    public Users getCurUser(Users users) {
+    public Users getCurUser( Users users) {
         Users users1 = usersMapper.selectByPrimaryKey(users.getId());
         return users1;
     }

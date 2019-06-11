@@ -10,8 +10,8 @@ import java.util.concurrent.CopyOnWriteArraySet;
 /**
  * 自定义一个定时类：该类主要实现了定时扫描的功能，通过websocket进行信息的主动推送功能
  */
-@EnableScheduling
-@Component
+//@EnableScheduling
+//@Component
 public class Timer {
     @Scheduled(cron = "0/5 * * * * ?")   //每分钟执行一次
     public void test(){
