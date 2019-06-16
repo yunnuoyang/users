@@ -6,6 +6,7 @@ import com.user.pojo.UsersExample;
 import com.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -14,7 +15,6 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
     @Autowired
     private UsersMapper usersMapper;
-
     @Override
     public List<Users> getUsersList() {
         return usersMapper.selectByExample(null);
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void modifyUserByID(@Valid Users users) throws Exception{
+    public void modifyUserByID( Users users){
         usersMapper.updateByPrimaryKeySelective(users);
     }
 
