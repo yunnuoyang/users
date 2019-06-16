@@ -1,0 +1,2 @@
+使用aop对controller代理增强的时候controller的
+所有的方法必须为public或者为protected修饰
