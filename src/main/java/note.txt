@@ -1,2 +1,6 @@
-使用aop对controller代理增强的时候controller的
-所有的方法必须为public或者为protected修饰
+使用aop代理增强的时候织入的
+所有的方法必须为public修饰
+否则会代理失败。
+spring的动态代理有两种实现方式
+1.jdk动态代理：代理模式，Proxy,EnvocationHandler,关键类（定义接口）
+2.cglib的代理：实现MethodInterceptor接口，用Enhancer来创建对象，动态生成子类实现（不需要接口）
